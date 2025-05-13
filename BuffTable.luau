@@ -108,4 +108,19 @@ function Table:Totals(): {[string]: any}
 	return Buffs
 end
 
+function Table:Clear(Type: string)
+	if not Type then
+		self.List = {}
+		return
+	end
+
+	local Current = self.List
+	while Current do
+		if Current.Type == Type then
+			Current:Destroy()
+		end
+		Current = Current.Next
+	end
+end
+
 return Table
