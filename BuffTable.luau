@@ -88,9 +88,9 @@ function Table:Print()
 end
 
 
-function Table:Totals(): {[string]: any}
+function Table:Totals(): {[string]: any}?
 	local Buffs = {}
-
+	
 	if not self.List then
 		return Buffs -- no buffs
 	end
